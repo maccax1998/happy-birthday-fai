@@ -4,24 +4,21 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#FFF3F7">
-<meta name="description" content="Happy Birthday Fai">
-<title>Happy Birthday ฝ้าย 🎂</title>
+<meta name="description" content="Happy Birthday">
+<title>Happy Birthday 🎂</title>
 <style>
   :root {
     /* ── Cotton-candy pastel world (committed single-theme birthday card) ── */
-    --ground-1: #FFF3F7;   /* soft cotton pink cream */
-    --ground-2: #F4F0FF;   /* whisper lavender */
-    --ground-3: #E8F6FF;   /* clear sky */
+    --ground-1: #FFF3F7;
+    --ground-2: #F4F0FF;
+    --ground-3: #E8F6FF;
     --card:     #FFFFFF;
-    --blush:    #FF7BA9;   /* primary blush rose */
-    --blush-dp: #F0578E;   /* deeper rose */
-    --coral:    #FF9E7A;   /* warm peach-coral */
-    --peach:    #FFD1A9;
-    --mint:     #8FE0C4;
-    --lav:      #C9B8F0;
-    --ink:      #5A3450;   /* deep warm plum — body text */
-    --ink-soft: #8A6A82;   /* muted plum */
+    --blush:    #FF7BA9;
+    --blush-dp: #F0578E;
+    --coral:    #FF9E7A;
     --gold:     #FFC46B;
+    --ink:      #5A3450;
+    --ink-soft: #8A6A82;
 
     --shadow-sm: 0 4px 14px rgba(160, 70, 120, 0.10);
     --shadow-md: 0 14px 40px rgba(160, 70, 120, 0.16);
@@ -33,7 +30,6 @@
   }
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { -webkit-text-size-adjust: 100%; }
 
   body {
@@ -50,22 +46,10 @@
     line-height: 1.6;
   }
 
-  /* Confetti / petal canvas sits behind everything */
-  #sky {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    pointer-events: none;
-  }
-
   .wrap {
-    position: relative;
-    z-index: 1;
     width: min(680px, 92vw);
     margin: 0 auto;
-    padding: clamp(28px, 7vw, 64px) 0 60px;
+    padding: clamp(28px, 7vw, 64px) 0 56px;
   }
 
   /* ─────────────────  HERO  ───────────────── */
@@ -73,8 +57,8 @@
 
   .eyebrow {
     display: inline-block;
-    font-size: 0.82rem;
-    letter-spacing: 0.28em;
+    font-size: 0.8rem;
+    letter-spacing: 0.26em;
     text-transform: uppercase;
     font-weight: 700;
     color: var(--blush-dp);
@@ -86,50 +70,40 @@
   }
 
   .cake {
-    font-size: clamp(3.4rem, 15vw, 5.2rem);
+    font-size: clamp(3.2rem, 14vw, 4.8rem);
     line-height: 1;
     display: block;
-    margin: 6px 0 10px;
-    filter: drop-shadow(0 10px 16px rgba(240, 87, 142, 0.28));
+    margin: 6px 0 12px;
+    filter: drop-shadow(0 10px 16px rgba(240, 87, 142, 0.24));
     animation: bob 3.4s ease-in-out infinite;
   }
 
   h1.title {
     font-family: var(--display);
     font-weight: 800;
-    font-size: clamp(2.5rem, 11vw, 4.2rem);
-    line-height: 1.02;
+    font-size: clamp(2.6rem, 12vw, 4.4rem);
+    line-height: 1.04;
     letter-spacing: -0.01em;
     text-wrap: balance;
     background: linear-gradient(120deg, var(--blush-dp) 0%, var(--coral) 55%, var(--gold) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    margin-bottom: 4px;
   }
 
-  .name {
+  .tagline {
     font-family: var(--display);
     font-weight: 800;
-    font-size: clamp(3.2rem, 20vw, 6.4rem);
-    line-height: 1.05;
+    font-size: clamp(1.7rem, 7.5vw, 2.7rem);
+    line-height: 1.18;
     color: var(--blush);
-    position: relative;
-    display: inline-block;
-    padding: 0 10px;
-    text-shadow: 0 6px 0 #FFD7E6, 0 14px 30px rgba(240, 87, 142, 0.25);
-  }
-  .name::after {
-    content: "🌸";
-    position: absolute;
-    top: -6px; right: -30px;
-    font-size: 0.42em;
-    animation: spin 6s linear infinite;
+    text-wrap: balance;
+    margin-top: 10px;
   }
 
   .subtitle {
-    margin-top: 20px;
-    font-size: clamp(1rem, 4.4vw, 1.18rem);
+    margin-top: 18px;
+    font-size: clamp(1rem, 4.4vw, 1.16rem);
     color: var(--ink-soft);
     font-weight: 600;
   }
@@ -139,8 +113,8 @@
     gap: 12px; margin: 40px 0 34px; color: var(--blush);
   }
   .divider .line { height: 2px; width: 52px; border-radius: 2px;
-    background: linear-gradient(90deg, transparent, var(--lav)); }
-  .divider .line.r { background: linear-gradient(90deg, var(--lav), transparent); }
+    background: linear-gradient(90deg, transparent, var(--blush) 90%); opacity: .5; }
+  .divider .line.r { background: linear-gradient(90deg, var(--blush), transparent 90%); }
   .divider .dot { font-size: 1.2rem; }
 
   /* ─────────────────  LOVE NOTE  ───────────────── */
@@ -148,7 +122,7 @@
     position: relative;
     background: var(--card);
     border-radius: var(--radius);
-    padding: clamp(26px, 6vw, 42px);
+    padding: clamp(28px, 6vw, 44px);
     box-shadow: var(--shadow-md);
     border: 1px solid #FFE1EC;
   }
@@ -156,26 +130,27 @@
     content: "💌";
     position: absolute;
     top: -22px; left: 50%; transform: translateX(-50%);
-    font-size: 2.4rem;
-    filter: drop-shadow(0 8px 12px rgba(240, 87, 142, 0.25));
+    font-size: 2.3rem;
+    filter: drop-shadow(0 8px 12px rgba(240, 87, 142, 0.22));
   }
   .note h2 {
     font-family: var(--display);
     font-weight: 800;
     text-align: center;
     color: var(--blush-dp);
-    font-size: clamp(1.3rem, 6vw, 1.7rem);
-    margin: 14px 0 20px;
+    font-size: clamp(1.35rem, 6vw, 1.75rem);
+    margin: 16px 0 22px;
   }
   .note p {
-    font-size: clamp(1.02rem, 4.4vw, 1.14rem);
+    font-size: clamp(1.02rem, 4.3vw, 1.12rem);
     color: var(--ink);
-    line-height: 1.95;
-    text-align: center;
-    white-space: pre-line;
+    line-height: 2.0;
+    text-align: left;
+    margin-bottom: 1.1em;
   }
+  .note p:last-of-type { margin-bottom: 0; }
   .signature {
-    margin-top: 26px;
+    margin-top: 28px;
     text-align: center;
     font-family: var(--display);
     font-weight: 800;
@@ -202,93 +177,50 @@
   }
   .gallery-head p { color: var(--ink-soft); font-weight: 600; margin-top: 6px; }
 
+  /* Symmetric square grid, centered (handles the odd 13th tile cleanly) */
   .gallery {
-    columns: 2;
-    column-gap: clamp(12px, 3.5vw, 18px);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: clamp(8px, 2.4vw, 14px);
   }
-
-  /* Polaroid photo card — scrapbook masonry */
-  .polaroid {
-    break-inside: avoid;
-    display: inline-block;
-    width: 100%;
-    margin: 0 0 clamp(14px, 4vw, 20px);
-    background: #fff;
-    padding: 10px 10px 13px;
-    border-radius: 12px;
-    box-shadow: var(--shadow-sm);
-    position: relative;
-    transition: transform .25s ease, box-shadow .25s ease;
-  }
-  .polaroid:nth-child(3n+1) { transform: rotate(-2.4deg); }
-  .polaroid:nth-child(3n+2) { transform: rotate(1.9deg); }
-  .polaroid:nth-child(3n+3) { transform: rotate(-0.8deg); }
-  .polaroid:hover { transform: rotate(0) scale(1.03); box-shadow: var(--shadow-md); z-index: 3; }
-
-  /* washi tape */
-  .polaroid::before {
-    content: "";
-    position: absolute;
-    top: -9px; left: 50%;
-    width: 52px; height: 19px;
-    transform: translateX(-50%) rotate(-3deg);
-    background: rgba(255, 174, 204, 0.5);
-    box-shadow: 0 2px 6px rgba(160, 70, 120, 0.12);
-    border-radius: 2px;
-  }
-  .polaroid:nth-child(2n)::before { background: rgba(180, 200, 255, 0.5); transform: translateX(-50%) rotate(3deg); }
-
-  .polaroid img {
-    display: block;
-    width: 100%;
-    height: auto;
-    border-radius: 6px;
+  .photo {
+    width: calc(50% - clamp(4px, 1.2vw, 7px));
+    aspect-ratio: 1 / 1;
+    border-radius: 16px;
+    overflow: hidden;
     background: linear-gradient(135deg, #FFE7F0, #E9F1FF 60%, #F1E9FF);
+    box-shadow: var(--shadow-sm);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    display: block;
+  }
+  .photo:hover { transform: translateY(-3px) scale(1.02); box-shadow: var(--shadow-md); }
+
+  @media (min-width: 560px) {
+    .photo { width: calc(33.333% - clamp(6px, 1.6vw, 10px)); }
   }
 
   /* ─────────────────  ENDING  ───────────────── */
-  .ending { text-align: center; margin-top: 56px; }
-  .ending .big {
-    font-family: var(--display);
-    font-weight: 800;
-    font-size: clamp(1.8rem, 9vw, 2.6rem);
-    background: linear-gradient(120deg, var(--blush-dp), var(--coral));
-    -webkit-background-clip: text; background-clip: text; color: transparent;
-    margin-bottom: 10px;
-  }
-  .ending .hearts { font-size: 1.6rem; letter-spacing: 6px; }
+  .ending { text-align: center; margin-top: 50px; }
+  .ending .hearts { font-size: 1.7rem; letter-spacing: 8px; }
 
-  .tap-hint {
-    margin-top: 40px;
-    text-align: center;
-    font-size: 0.86rem;
-    color: var(--ink-soft);
-    font-weight: 600;
-    opacity: .85;
-  }
-
-  @keyframes bob  { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-  @keyframes spin { to { transform: rotate(360deg); } }
-
-  @media (prefers-reduced-motion: reduce) {
-    .cake, .name::after { animation: none; }
-  }
-
-  @media (min-width: 620px) {
-    .gallery { columns: 3; }
-  }
+  @keyframes bob { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+  @media (prefers-reduced-motion: reduce) { .cake { animation: none; } }
 </style>
 </head>
 <body>
-<canvas id="sky"></canvas>
-
 <main class="wrap">
   <section class="hero">
     <span class="eyebrow">Today is your day</span>
     <span class="cake" aria-hidden="true">🎂</span>
     <h1 class="title">Happy Birthday</h1>
-    <div class="name">ฝ้าย</div>
-    <p class="subtitle">วันนี้เป็นวันพิเศษของเธอนะ 💗</p>
+    <p class="tagline">นะ คนเก่งของเค้า 💗</p>
+    <p class="subtitle">วันนี้เป็นวันพิเศษของเธอนะ</p>
   </section>
 
   <div class="divider" aria-hidden="true">
@@ -296,134 +228,37 @@
   </div>
 
   <section class="note">
-    <h2>ถึงฝ้าย คนพิเศษของเรา</h2>
-    <p>Happy Birthday นะ วันนี้เป็นวันพิเศษของเธอ และเราก็อยากให้เธอรู้ว่าเราดีใจมาก ๆ ที่ได้มีเธอเข้ามาเป็นส่วนหนึ่งในชีวิต ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน
-
-ขอบคุณที่คอยอยู่ข้าง ๆ กัน ทั้งในวันที่มีความสุข และในวันที่อะไรหลาย ๆ อย่างไม่เป็นอย่างที่คิด ขอให้ปีนี้เป็นปีที่ดีของเธอ ขอให้เธอมีความสุขกับทุก ๆ วัน ได้ทำในสิ่งที่อยากทำ ได้เจอแต่เรื่องดี ๆ และขอให้รอยยิ้มของเธอยังคงอยู่แบบนี้ไปนาน ๆ
-
-ส่วนเราก็จะพยายามซัพพอร์ตเธอให้ดีที่สุด และจะคอยอยู่ข้าง ๆ เธอในวันที่ดีและวันที่ไม่ดีนะ สุขสันต์วันเกิดนะ รักเธอมาก ๆ และขอบคุณที่เข้ามาในชีวิตเรานะ</p>
+    <h2>ถึงคนเก่งของเค้า</h2>
+    <p>Happy Birthday นะ วันนี้เป็นวันพิเศษของเธอ และเราก็อยากให้เธอรู้ว่าเราดีใจมาก ๆ ที่ได้มีเธอเข้ามาเป็นส่วนหนึ่งในชีวิต ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน</p>
+    <p>ขอบคุณที่คอยอยู่ข้าง ๆ กัน ทั้งในวันที่มีความสุข และในวันที่อะไรหลาย ๆ อย่างไม่เป็นอย่างที่คิด ขอให้ปีนี้เป็นปีที่ดีของเธอ ขอให้เธอมีความสุขกับทุก ๆ วัน ได้ทำในสิ่งที่อยากทำ ได้เจอแต่เรื่องดี ๆ และขอให้รอยยิ้มของเธอยังคงอยู่แบบนี้ไปนาน ๆ</p>
+    <p>ส่วนเราก็จะพยายามซัพพอร์ตเธอให้ดีที่สุด และจะคอยอยู่ข้าง ๆ เธอในวันที่ดีและวันที่ไม่ดีนะ สุขสันต์วันเกิดนะ รักเธอมาก ๆ และขอบคุณที่เข้ามาในชีวิตเรานะ</p>
     <div class="signature">รักเธอมาก ๆ นะ 💕<small>จากคนที่รักเธอที่สุด</small></div>
   </section>
 
   <div class="gallery-head">
-    <h2>ช่วงเวลาของเรา 📸</h2>
-    <p>ความทรงจำดี ๆ ที่เรามีร่วมกัน</p>
+    <h2>อัลบั้มของคนเก่ง 📸</h2>
+    <p>น่ารักทุกมุมเลยนะ</p>
   </div>
 
   <section class="gallery">
-    <figure class="polaroid"><img src="img/photo-01.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 1"></figure>
-    <figure class="polaroid"><img src="img/photo-02.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 2"></figure>
-    <figure class="polaroid"><img src="img/photo-03.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 3"></figure>
-    <figure class="polaroid"><img src="img/photo-04.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 4"></figure>
-    <figure class="polaroid"><img src="img/photo-05.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 5"></figure>
-    <figure class="polaroid"><img src="img/photo-06.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 6"></figure>
-    <figure class="polaroid"><img src="img/photo-07.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 7"></figure>
-    <figure class="polaroid"><img src="img/photo-08.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 8"></figure>
-    <figure class="polaroid"><img src="img/photo-09.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 9"></figure>
-    <figure class="polaroid"><img src="img/photo-10.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 10"></figure>
-    <figure class="polaroid"><img src="img/photo-11.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 11"></figure>
-    <figure class="polaroid"><img src="img/photo-12.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 12"></figure>
-    <figure class="polaroid"><img src="img/photo-13.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 13"></figure>
+    <figure class="photo"><img src="img/photo-01.jpg" loading="lazy" decoding="async" alt="รูปที่ 1"></figure>
+    <figure class="photo"><img src="img/photo-02.jpg" loading="lazy" decoding="async" alt="รูปที่ 2"></figure>
+    <figure class="photo"><img src="img/photo-03.jpg" loading="lazy" decoding="async" alt="รูปที่ 3"></figure>
+    <figure class="photo"><img src="img/photo-04.jpg" loading="lazy" decoding="async" alt="รูปที่ 4"></figure>
+    <figure class="photo"><img src="img/photo-05.jpg" loading="lazy" decoding="async" alt="รูปที่ 5"></figure>
+    <figure class="photo"><img src="img/photo-06.jpg" loading="lazy" decoding="async" alt="รูปที่ 6"></figure>
+    <figure class="photo"><img src="img/photo-07.jpg" loading="lazy" decoding="async" alt="รูปที่ 7"></figure>
+    <figure class="photo"><img src="img/photo-08.jpg" loading="lazy" decoding="async" alt="รูปที่ 8"></figure>
+    <figure class="photo"><img src="img/photo-09.jpg" loading="lazy" decoding="async" alt="รูปที่ 9"></figure>
+    <figure class="photo"><img src="img/photo-10.jpg" loading="lazy" decoding="async" alt="รูปที่ 10"></figure>
+    <figure class="photo"><img src="img/photo-11.jpg" loading="lazy" decoding="async" alt="รูปที่ 11"></figure>
+    <figure class="photo"><img src="img/photo-12.jpg" loading="lazy" decoding="async" alt="รูปที่ 12"></figure>
+    <figure class="photo"><img src="img/photo-13.jpg" loading="lazy" decoding="async" alt="รูปที่ 13"></figure>
   </section>
 
   <section class="ending">
-    <div class="big">สุขสันต์วันเกิดนะ ฝ้าย 🎉</div>
     <div class="hearts" aria-hidden="true">💗 💛 💙</div>
   </section>
-
-  <p class="tap-hint">👆 แตะที่หน้าจอเพื่อโปรยหัวใจ</p>
 </main>
-
-<script>
-  (function () {
-    var canvas = document.getElementById('sky');
-    var ctx = canvas.getContext('2d');
-    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    var W, H, DPR;
-
-    function resize() {
-      DPR = Math.min(window.devicePixelRatio || 1, 2);
-      W = canvas.width = Math.floor(innerWidth * DPR);
-      H = canvas.height = Math.floor(innerHeight * DPR);
-      canvas.style.width = innerWidth + 'px';
-      canvas.style.height = innerHeight + 'px';
-    }
-    resize();
-    addEventListener('resize', resize);
-
-    var EMOJIS = ['🌸', '💗', '🎈', '⭐', '💛', '🌷', '💙', '🎀', '🩷'];
-    var particles = [];
-
-    function makeParticle(x, y, burst) {
-      var size = (18 + Math.random() * 20) * DPR;
-      return {
-        x: x != null ? x : Math.random() * W,
-        y: y != null ? y : -30 * DPR,
-        vx: (Math.random() - 0.5) * (burst ? 6 : 1.2) * DPR,
-        vy: (burst ? -(2 + Math.random() * 5) : (0.6 + Math.random() * 1.4)) * DPR,
-        g: 0.045 * DPR,
-        size: size,
-        rot: Math.random() * Math.PI * 2,
-        vr: (Math.random() - 0.5) * 0.12,
-        char: EMOJIS[(Math.random() * EMOJIS.length) | 0],
-        life: 1,
-        fade: burst ? 0.006 + Math.random() * 0.004 : 0
-      };
-    }
-
-    // Gentle ambient fall
-    var AMBIENT = reduce ? 0 : 26;
-    for (var i = 0; i < AMBIENT; i++) {
-      var p = makeParticle(Math.random() * W, Math.random() * H, false);
-      particles.push(p);
-    }
-
-    function burstAt(cx, cy) {
-      for (var i = 0; i < 26; i++) particles.push(makeParticle(cx, cy, true));
-    }
-
-    // Opening celebration
-    if (!reduce) {
-      setTimeout(function () { burstAt(W * 0.5, H * 0.28); }, 350);
-    }
-
-    function tap(e) {
-      var t = e.touches ? e.touches[0] : e;
-      burstAt(t.clientX * DPR, t.clientY * DPR);
-    }
-    addEventListener('pointerdown', tap);
-
-    function frame() {
-      ctx.clearRect(0, 0, W, H);
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      for (var i = particles.length - 1; i >= 0; i--) {
-        var p = particles[i];
-        p.vy += p.g;
-        p.x += p.vx;
-        p.y += p.vy;
-        p.rot += p.vr;
-        if (p.fade) p.life -= p.fade;
-
-        // ambient recycle
-        if (!p.fade && p.y > H + 40 * DPR) {
-          p.y = -30 * DPR; p.x = Math.random() * W; p.vy = (0.6 + Math.random()) * DPR;
-        }
-        if (p.life <= 0 || (p.fade && p.y > H + 60 * DPR)) {
-          particles.splice(i, 1); continue;
-        }
-        ctx.save();
-        ctx.globalAlpha = Math.max(0, Math.min(1, p.life));
-        ctx.translate(p.x, p.y);
-        ctx.rotate(p.rot);
-        ctx.font = p.size + 'px serif';
-        ctx.fillText(p.char, 0, 0);
-        ctx.restore();
-      }
-      requestAnimationFrame(frame);
-    }
-    frame();
-  })();
-</script>
 </body>
 </html>
