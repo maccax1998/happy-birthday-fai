@@ -203,42 +203,47 @@
   .gallery-head p { color: var(--ink-soft); font-weight: 600; margin-top: 6px; }
 
   .gallery {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: clamp(14px, 4vw, 22px);
+    columns: 2;
+    column-gap: clamp(12px, 3.5vw, 18px);
   }
 
-  /* Polaroid frame */
+  /* Polaroid photo card — scrapbook masonry */
   .polaroid {
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin: 0 0 clamp(14px, 4vw, 20px);
     background: #fff;
-    padding: 12px 12px 16px;
-    border-radius: 14px;
+    padding: 10px 10px 13px;
+    border-radius: 12px;
     box-shadow: var(--shadow-sm);
+    position: relative;
     transition: transform .25s ease, box-shadow .25s ease;
   }
-  .polaroid:nth-child(odd)  { transform: rotate(-2.2deg); }
-  .polaroid:nth-child(even) { transform: rotate(2deg); }
-  .polaroid:hover { transform: rotate(0) scale(1.03); box-shadow: var(--shadow-md); }
+  .polaroid:nth-child(3n+1) { transform: rotate(-2.4deg); }
+  .polaroid:nth-child(3n+2) { transform: rotate(1.9deg); }
+  .polaroid:nth-child(3n+3) { transform: rotate(-0.8deg); }
+  .polaroid:hover { transform: rotate(0) scale(1.03); box-shadow: var(--shadow-md); z-index: 3; }
 
-  .polaroid .frame {
-    aspect-ratio: 1 / 1;
-    border-radius: 8px;
-    background: linear-gradient(135deg, #FFE7F0, #E9F1FF 60%, #F1E9FF);
-    display: flex; flex-direction: column;
-    align-items: center; justify-content: center;
-    gap: 6px; color: var(--blush);
-    overflow: hidden;
+  /* washi tape */
+  .polaroid::before {
+    content: "";
+    position: absolute;
+    top: -9px; left: 50%;
+    width: 52px; height: 19px;
+    transform: translateX(-50%) rotate(-3deg);
+    background: rgba(255, 174, 204, 0.5);
+    box-shadow: 0 2px 6px rgba(160, 70, 120, 0.12);
+    border-radius: 2px;
   }
-  .polaroid .frame img { width: 100%; height: 100%; object-fit: cover; }
-  .polaroid .frame .ph-icon { font-size: 2rem; opacity: .8; }
-  .polaroid .frame .ph-txt { font-size: 0.78rem; color: var(--ink-soft); font-weight: 600; }
-  .polaroid .cap {
-    text-align: center;
-    margin-top: 10px;
-    font-family: var(--display);
-    font-weight: 700;
-    color: var(--ink-soft);
-    font-size: 0.9rem;
+  .polaroid:nth-child(2n)::before { background: rgba(180, 200, 255, 0.5); transform: translateX(-50%) rotate(3deg); }
+
+  .polaroid img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+    background: linear-gradient(135deg, #FFE7F0, #E9F1FF 60%, #F1E9FF);
   }
 
   /* ─────────────────  ENDING  ───────────────── */
@@ -270,7 +275,7 @@
   }
 
   @media (min-width: 620px) {
-    .gallery { grid-template-columns: repeat(3, 1fr); }
+    .gallery { columns: 3; }
   }
 </style>
 </head>
@@ -305,19 +310,21 @@
     <p>ความทรงจำดี ๆ ที่เรามีร่วมกัน</p>
   </div>
 
-  <!-- ▼▼▼ GALLERY — ใส่รูปตรงนี้ทีหลัง ▼▼▼
-       พอได้รูปแล้ว แทนที่ <div class="frame">...</div> ด้วย:
-       <div class="frame"><img src="รูป" alt=""></div>
-  -->
   <section class="gallery">
-    <figure class="polaroid"><div class="frame"><span class="ph-icon">🌷</span><span class="ph-txt">รูปที่ 1</span></div><figcaption class="cap">ครั้งแรกที่เจอ</figcaption></figure>
-    <figure class="polaroid"><div class="frame"><span class="ph-icon">💞</span><span class="ph-txt">รูปที่ 2</span></div><figcaption class="cap">เที่ยวด้วยกัน</figcaption></figure>
-    <figure class="polaroid"><div class="frame"><span class="ph-icon">🌈</span><span class="ph-txt">รูปที่ 3</span></div><figcaption class="cap">วันสบาย ๆ</figcaption></figure>
-    <figure class="polaroid"><div class="frame"><span class="ph-icon">🍰</span><span class="ph-txt">รูปที่ 4</span></div><figcaption class="cap">กินของอร่อย</figcaption></figure>
-    <figure class="polaroid"><div class="frame"><span class="ph-icon">🌟</span><span class="ph-txt">รูปที่ 5</span></div><figcaption class="cap">ยิ้มสวย ๆ</figcaption></figure>
-    <figure class="polaroid"><div class="frame"><span class="ph-icon">🧸</span><span class="ph-txt">รูปที่ 6</span></div><figcaption class="cap">อยู่ด้วยกัน</figcaption></figure>
+    <figure class="polaroid"><img src="img/photo-01.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 1"></figure>
+    <figure class="polaroid"><img src="img/photo-02.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 2"></figure>
+    <figure class="polaroid"><img src="img/photo-03.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 3"></figure>
+    <figure class="polaroid"><img src="img/photo-04.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 4"></figure>
+    <figure class="polaroid"><img src="img/photo-05.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 5"></figure>
+    <figure class="polaroid"><img src="img/photo-06.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 6"></figure>
+    <figure class="polaroid"><img src="img/photo-07.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 7"></figure>
+    <figure class="polaroid"><img src="img/photo-08.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 8"></figure>
+    <figure class="polaroid"><img src="img/photo-09.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 9"></figure>
+    <figure class="polaroid"><img src="img/photo-10.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 10"></figure>
+    <figure class="polaroid"><img src="img/photo-11.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 11"></figure>
+    <figure class="polaroid"><img src="img/photo-12.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 12"></figure>
+    <figure class="polaroid"><img src="img/photo-13.jpg" loading="lazy" decoding="async" alt="ความทรงจำของเรา 13"></figure>
   </section>
-  <!-- ▲▲▲ GALLERY ▲▲▲ -->
 
   <section class="ending">
     <div class="big">สุขสันต์วันเกิดนะ ฝ้าย 🎉</div>
