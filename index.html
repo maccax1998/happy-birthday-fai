@@ -3,25 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#FFF3F7">
+<meta name="theme-color" content="#EAF3FF">
 <meta name="description" content="Happy Birthday">
 <title>Happy Birthday 🎂</title>
 <style>
   :root {
     /* ── Cotton-candy pastel world (committed single-theme birthday card) ── */
-    --ground-1: #FFF3F7;
-    --ground-2: #F4F0FF;
-    --ground-3: #E8F6FF;
+    --ground-1: #EAF3FF;   /* soft sky blue */
+    --ground-2: #F0ECFF;   /* whisper lavender */
+    --ground-3: #FFEFF6;   /* soft pink */
     --card:     #FFFFFF;
-    --blush:    #FF7BA9;
-    --blush-dp: #F0578E;
-    --coral:    #FF9E7A;
-    --gold:     #FFC46B;
-    --ink:      #5A3450;
-    --ink-soft: #8A6A82;
+    --blue:     #7DB0FF;   /* pastel blue (lead) */
+    --blue-dp:  #3B7CE0;   /* deep blue */
+    --blush:    #FF90B7;   /* pink accent */
+    --blush-dp: #EF5E92;   /* deep pink */
+    --violet:   #7B5BD0;   /* blend bridge */
+    --ink:      #3C3760;   /* deep indigo */
+    --ink-soft: #7C769B;
 
-    --shadow-sm: 0 4px 14px rgba(160, 70, 120, 0.10);
-    --shadow-md: 0 14px 40px rgba(160, 70, 120, 0.16);
+    --shadow-sm: 0 4px 14px rgba(90, 110, 180, 0.12);
+    --shadow-md: 0 14px 40px rgba(90, 110, 180, 0.18);
     --radius:   26px;
 
     --display: ui-rounded, "SF Pro Rounded", -apple-system, "Segoe UI", system-ui,
@@ -36,9 +37,9 @@
     font-family: var(--body);
     color: var(--ink);
     background:
-      radial-gradient(1200px 700px at 15% -10%, #FFE3EE 0%, transparent 55%),
-      radial-gradient(1000px 620px at 95% 0%, #E6F1FF 0%, transparent 55%),
-      radial-gradient(900px 700px at 50% 115%, #F2E9FF 0%, transparent 55%),
+      radial-gradient(1200px 700px at 15% -10%, #D8E9FF 0%, transparent 55%),
+      radial-gradient(1000px 620px at 95% 0%, #FFE1EE 0%, transparent 55%),
+      radial-gradient(900px 700px at 50% 115%, #ECE6FF 0%, transparent 55%),
       linear-gradient(180deg, var(--ground-1) 0%, var(--ground-2) 55%, var(--ground-3) 100%);
     background-attachment: fixed;
     min-height: 100vh;
@@ -61,7 +62,7 @@
     letter-spacing: 0.26em;
     text-transform: uppercase;
     font-weight: 700;
-    color: var(--blush-dp);
+    color: var(--blue-dp);
     background: #FFFFFFcc;
     padding: 8px 16px;
     border-radius: 999px;
@@ -74,7 +75,7 @@
     line-height: 1;
     display: block;
     margin: 6px 0 12px;
-    filter: drop-shadow(0 10px 16px rgba(240, 87, 142, 0.24));
+    filter: drop-shadow(0 10px 16px rgba(90, 110, 180, 0.26));
     animation: bob 3.4s ease-in-out infinite;
   }
 
@@ -85,7 +86,7 @@
     line-height: 1.04;
     letter-spacing: -0.01em;
     text-wrap: balance;
-    background: linear-gradient(120deg, var(--blush-dp) 0%, var(--coral) 55%, var(--gold) 100%);
+    background: linear-gradient(120deg, var(--blue-dp) 0%, var(--violet) 55%, var(--blush) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -96,7 +97,7 @@
     font-weight: 800;
     font-size: clamp(1.7rem, 7.5vw, 2.7rem);
     line-height: 1.18;
-    color: var(--blush);
+    color: var(--blue-dp);
     text-wrap: balance;
     margin-top: 10px;
   }
@@ -110,11 +111,11 @@
 
   .divider {
     display: flex; align-items: center; justify-content: center;
-    gap: 12px; margin: 40px 0 34px; color: var(--blush);
+    gap: 12px; margin: 40px 0 34px; color: var(--blue);
   }
   .divider .line { height: 2px; width: 52px; border-radius: 2px;
-    background: linear-gradient(90deg, transparent, var(--blush) 90%); opacity: .5; }
-  .divider .line.r { background: linear-gradient(90deg, var(--blush), transparent 90%); }
+    background: linear-gradient(90deg, transparent, var(--blue) 90%); opacity: .55; }
+  .divider .line.r { background: linear-gradient(90deg, var(--blue), transparent 90%); }
   .divider .dot { font-size: 1.2rem; }
 
   /* ─────────────────  LOVE NOTE  ───────────────── */
@@ -124,7 +125,7 @@
     border-radius: var(--radius);
     padding: clamp(28px, 6vw, 44px);
     box-shadow: var(--shadow-md);
-    border: 1px solid #FFE1EC;
+    border: 1px solid #E1ECFF;
   }
   .note::before {
     content: "💌";
@@ -137,7 +138,7 @@
     font-family: var(--display);
     font-weight: 800;
     text-align: center;
-    color: var(--blush-dp);
+    color: var(--blue-dp);
     font-size: clamp(1.35rem, 6vw, 1.75rem);
     margin: 16px 0 22px;
   }
@@ -154,7 +155,7 @@
     text-align: center;
     font-family: var(--display);
     font-weight: 800;
-    color: var(--coral);
+    color: var(--blush-dp);
     font-size: 1.25rem;
   }
   .signature small {
@@ -173,7 +174,7 @@
     font-family: var(--display);
     font-weight: 800;
     font-size: clamp(1.5rem, 7vw, 2rem);
-    color: var(--blush-dp);
+    color: var(--blue-dp);
   }
   .gallery-head p { color: var(--ink-soft); font-weight: 600; margin-top: 6px; }
 
@@ -189,7 +190,7 @@
     aspect-ratio: 1 / 1;
     border-radius: 16px;
     overflow: hidden;
-    background: linear-gradient(135deg, #FFE7F0, #E9F1FF 60%, #F1E9FF);
+    background: linear-gradient(135deg, #E3F0FF, #EDE7FF 55%, #FFE7F1);
     box-shadow: var(--shadow-sm);
     transition: transform .2s ease, box-shadow .2s ease;
   }
@@ -232,7 +233,7 @@
     <p>Happy Birthday นะ วันนี้เป็นวันพิเศษของเธอ และเราก็อยากให้เธอรู้ว่าเราดีใจมาก ๆ ที่ได้มีเธอเข้ามาเป็นส่วนหนึ่งในชีวิต ขอบคุณสำหรับทุกช่วงเวลาที่เราได้อยู่ด้วยกัน</p>
     <p>ขอบคุณที่คอยอยู่ข้าง ๆ กัน ทั้งในวันที่มีความสุข และในวันที่อะไรหลาย ๆ อย่างไม่เป็นอย่างที่คิด ขอให้ปีนี้เป็นปีที่ดีของเธอ ขอให้เธอมีความสุขกับทุก ๆ วัน ได้ทำในสิ่งที่อยากทำ ได้เจอแต่เรื่องดี ๆ และขอให้รอยยิ้มของเธอยังคงอยู่แบบนี้ไปนาน ๆ</p>
     <p>ส่วนเราก็จะพยายามซัพพอร์ตเธอให้ดีที่สุด และจะคอยอยู่ข้าง ๆ เธอในวันที่ดีและวันที่ไม่ดีนะ สุขสันต์วันเกิดนะ รักเธอมาก ๆ และขอบคุณที่เข้ามาในชีวิตเรานะ</p>
-    <div class="signature">รักเธอมาก ๆ นะ 💕<small>จากคนที่รักเธอที่สุด</small></div>
+    <div class="signature">รักเธอมาก ๆ นะ 💕</div>
   </section>
 
   <div class="gallery-head">
@@ -257,7 +258,7 @@
   </section>
 
   <section class="ending">
-    <div class="hearts" aria-hidden="true">💗 💛 💙</div>
+    <div class="hearts" aria-hidden="true">💙 💜 🩷</div>
   </section>
 </main>
 </body>
